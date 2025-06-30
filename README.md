@@ -27,8 +27,8 @@ A simple and responsive weather app built using **HTML**, and **JavaScript**. It
 ## 📁 Folder Structure
 Weather-app/
 ├── index.html
-├── script.js
-└── README.md
+├── README.md
+└── script.js
 
 ## ✨ Live Preview
 
