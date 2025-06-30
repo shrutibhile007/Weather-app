@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">weatherapp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">about </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Amravati</a></li>
+            <li><a class="dropdown-item" href="#">Nagpur</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Search for city</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input id ="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit" id ="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <h1 class ="my=4 text-center"> Weather for <span id="cityName"></span></h1>
+<div class="container py-5">
+  <main>
+    <!-- Pricing Cards -->
+    <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+      <!-- Free Plan -->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm h-100">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Temprature Info</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              <small class="text-body-secondary fw-light">°C</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Temperature: <span id="temp"></span>°C</li>
+              <li>Min Temp: <span id="min_temp"></span>°C</li>
+              <li>Max Temp: <span id="max_temp"></span>°C</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm h-100">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Humidity Info</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              <small class="text-body-secondary fw-light">%</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Cloud %: <span id="cloud_pct"></span></li>
+              <li>Feels Like: <span id="feels_like"></span>°C</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+            </ul>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm  h-100">
+          <div class="card-header py-3  ">
+            <h4 class="my-0 fw-normal ">Wind Info</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title text-dark">
+              <small class="text-body-secondary fw-light">km/hr</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Wind Speed: <span id="wind_speed"></span> m/s</li>
+              <li>Wind Degrees: <span id="wind_degrees"></span>°</li>
+              <li>Sunrise: <span id="sunrise"></span></li>
+              <li>Sunset: <span id="sunset"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <h2 class="display-6 text-center mb-4">Weather Of Other Country</h2>
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cloud_pct</th>
+            <th>Condition</th>
+            <th>Humidity</th>
+            <th>Max_temp</th>
+            <th>Min_temp</th>
+            <th>Sunrise</th>
+            <th>Sunriseunset</th>
+            <th>Wind</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-start">US</th>
+            <td>10%</td>
+            <td>Haze</td>
+            <td>20%</td>
+            <td>28%</td>
+            <td>21%</td>
+            <td>5:00AM</td>
+            <td>6:30PM</td>
+            <td>it's less windy</td>
+            <td>Hot Today</td>
+          </tr>
+          <tr>
+            <th class="text-start">Germany</th>
+           <td>15%</td>
+            <td>Haze</td>
+            <td>10%</td>
+            <td>34%</td>
+            <td>28%</td>
+            <td>5:00AM</td>
+            <td>7:00PM</td>
+            <td>It's less windy</td>
+            <td>Hot Today</td>
+          </tr>
+          <tr>
+            <th class="text-start">UK</th>
+            <td>33%</td>
+            <td>Smoke</td>
+            <td>30%</td>
+            <td>10%</td>
+            <td>-2%</td>
+            <td>6:00AM</td>
+            <td>6:00PM</td>
+            <td>It's windier</td>
+            <td>Windy</td>
+          </tr>
+          <tr>
+            <th class="text-start">Paris</th>
+            <td>80%</td>
+            <td>Hail</td>
+            <td>50%</td>
+            <td>-2%</td>
+            <td>-1%</td>
+            <td>6:00AM</td>
+            <td>6:00PM</td>
+            <td>It's windier</td>
+            <td>Chilly</td>
+          </tr>
+          <tr>
+            <th class="text-start">Ireland</th>
+            <td>100%</td>
+            <td>Hail,Lighting</td>
+            <td>50%</td>
+            <td>-3%</td>
+            <td>-1%</td>
+            <td>6:00AM</td>
+            <td>6:00PM</td>
+            <td>It's windier</td>
+            <td>Chilly</td>
+          </tr>
+          <tr>
+            <th class="text-start">Africa</th>
+            <td>75%</td>
+            <td>Hail</td>
+            <td>30%</td>
+            <td>12%</td>
+            <td>10%</td>
+            <td>6:00AM</td>
+            <td>6:00PM</td>
+            <td>It's Windier</td>
+            <td>Chilly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
